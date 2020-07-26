@@ -21,53 +21,30 @@ namespace API_REST_GREat.Controller
             _repo = repo;
         }
 
-        List<Usuario> Usuarios = new List<Usuario>()
-        {
-            new Usuario()
-            {
-                Id = 1,
-                Nome = "Amadeu",
-                CPF = "042.567.543.11",
-                RG = "299824336",
-                Filiacao_Mae = "Creuza",
-                Filiacao_Pai = "Otoim"
-            },
-
-            new Usuario()
-            {
-                Id = 2,
-                Nome = "Barbosa",
-                CPF = "042.424.543.11",
-                RG = "2998242446",
-                Filiacao_Mae = "Aretuza",
-                Filiacao_Pai = "Zezim"
-            }
-        };
         // GET: api/<UsuarioController>
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.Implementado());
+            return Ok(_repo.GetallUsers());
         }
 
         // GET api/<UsuarioController>/5
-        [HttpGet("{id:int}")]
-        public IActionResult GetById(int id)
+        [HttpGet("byDoc")]
+        public IActionResult GetById(string doc)
         {
-            var user = Usuarios.FirstOrDefault(u => u.Id == id);
-            if (user == null) return BadRequest("Aluno nao encontrado");
-            
-            return Ok(user);
+            var user = _repo.GetUserByDoc(doc);
+
+            if(user != null)
+                return Ok(user);
+            return BadRequest("Usuario ao encontrado");
         }
 
         // GET api/<UsuarioController>/5
         [HttpGet("{nome}")]
         public IActionResult GetByNome(string nome)
         {
-            var user = Usuarios.FirstOrDefault(u => u.Nome.Contains(nome));
-            if (user == null) return BadRequest("Aluno nao encontrado");
-
-            return Ok(user);
+            
+            return Ok();
         }
         // POST api/<UsuarioController>
         [HttpPost]
@@ -82,15 +59,27 @@ namespace API_REST_GREat.Controller
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Usuario user)
+        public IActionResult Put(int id, [FromBody] Usuario user)
         {
-            
+            user.Id = id;
+            var usuario = _repo.GetUserById(id);
+            usuario = user;
+            _repo.Update(usuario);
+
+            if (_repo.SaveChanges())
+                return Ok(user);
+            return BadRequest("Usuario nao encontrado");
         }
 
         // DELETE api/<UsuarioController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{doc}")]
+        public IActionResult Delete(string doc)
         {
+            var user = _repo.GetUserByDoc(doc);
+            _repo.Remove(user);
+            if(_repo.SaveChanges())
+                return Ok("Deletado com Sucesso");
+            return BadRequest("Usuario nao encontrado");
         }
     }
 }

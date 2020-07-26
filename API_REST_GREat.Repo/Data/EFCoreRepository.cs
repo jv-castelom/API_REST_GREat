@@ -1,4 +1,6 @@
-﻿using System;
+﻿using API_REST_GREat.Model;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,6 +40,32 @@ namespace API_REST_GREat.Data
         public bool SaveChanges()
         {
             return (_context.SaveChanges())> 0;
+        }
+
+        public Usuario[] GetallUsers()
+        {
+            IQueryable<Usuario> query = _context.Usuarios;
+            query.AsNoTracking().OrderBy(h => h.Id);
+            return query.ToArray();
+        }
+
+        public Usuario GetUserByDoc(string doc)
+        {
+            IQueryable<Usuario> query = _context.Usuarios;
+            query.AsNoTracking().OrderBy(h => h.Id);
+            return query.FirstOrDefault(h => h.CPF == doc || h.RG == doc);
+        }
+
+        public Usuario[] GetUserByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Usuario GetUserById(int id)
+        {
+            IQueryable<Usuario> query = _context.Usuarios;
+            query.AsNoTracking().OrderBy(h => h.Id);
+            return query.AsNoTracking().FirstOrDefault(h => h.Id == id);
         }
     }
 }
