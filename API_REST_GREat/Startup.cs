@@ -26,6 +26,18 @@ namespace API_REST_GREat
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Permite acesso de aplicações externas.
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Policy",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyHeader();
+                        builder.AllowAnyMethod();
+                    });
+            });
+
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
@@ -44,6 +56,8 @@ namespace API_REST_GREat
             }
 
             app.UseRouting();
+
+            app.UseCors();
 
             //app.UseAuthorization(); Nao utilizo autorizacao por enquanto.
 

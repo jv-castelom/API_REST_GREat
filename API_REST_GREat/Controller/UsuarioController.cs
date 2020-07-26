@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API_REST_GREat.Data;
 using API_REST_GREat.Model;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -22,6 +23,7 @@ namespace API_REST_GREat.Controller
         }
 
         // GET: api/<UsuarioController>
+        [EnableCors("Policy")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,6 +31,7 @@ namespace API_REST_GREat.Controller
         }
 
         // GET api/<UsuarioController>/5
+        [EnableCors("Policy")]
         [HttpGet("byDoc")]
         public IActionResult GetById(string doc)
         {
@@ -40,6 +43,7 @@ namespace API_REST_GREat.Controller
         }
 
         // GET api/<UsuarioController>/5
+        [EnableCors("Policy")]
         [HttpGet("{nome}")]
         public IActionResult GetByNome(string nome)
         {
@@ -47,6 +51,7 @@ namespace API_REST_GREat.Controller
             return Ok();
         }
         // POST api/<UsuarioController>
+        [EnableCors("Policy")]
         [HttpPost]
         public IActionResult Post([FromBody] Usuario user)
         {
@@ -58,6 +63,7 @@ namespace API_REST_GREat.Controller
         }
 
         // PUT api/<UsuarioController>/5
+        [EnableCors("Policy")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Usuario user)
         {
@@ -72,6 +78,7 @@ namespace API_REST_GREat.Controller
         }
 
         // DELETE api/<UsuarioController>/5
+        [EnableCors("Policy")]
         [HttpDelete("{doc}")]
         public IActionResult Delete(string doc)
         {
