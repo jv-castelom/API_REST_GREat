@@ -11,5 +11,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API_REST_GREat.Repo\API_REST_GREat.Repo.csproj" />
+    <ProjectReference Include="..\API_REST_GREat_Domain\API_REST_GREat_Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>

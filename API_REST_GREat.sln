@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_REST_GREat", "API_REST_GREat\API_REST_GREat.csproj", "{BCE62204-87F6-48FE-AD02-8BD730A4CC70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_REST_GREat_Domain", "API_REST_GREat_Domain\API_REST_GREat_Domain.csproj", "{41F3C287-952D-453A-B099-39ADFEC1AA4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_REST_GREat.Repo", "API_REST_GREat.Repo\API_REST_GREat.Repo.csproj", "{90320EB0-638F-4E90-91E0-8951B5CBC95B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BCE62204-87F6-48FE-AD02-8BD730A4CC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCE62204-87F6-48FE-AD02-8BD730A4CC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCE62204-87F6-48FE-AD02-8BD730A4CC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F3C287-952D-453A-B099-39ADFEC1AA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F3C287-952D-453A-B099-39ADFEC1AA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F3C287-952D-453A-B099-39ADFEC1AA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F3C287-952D-453A-B099-39ADFEC1AA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90320EB0-638F-4E90-91E0-8951B5CBC95B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90320EB0-638F-4E90-91E0-8951B5CBC95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90320EB0-638F-4E90-91E0-8951B5CBC95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90320EB0-638F-4E90-91E0-8951B5CBC95B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

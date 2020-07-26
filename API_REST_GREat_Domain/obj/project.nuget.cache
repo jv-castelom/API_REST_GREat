@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "l1bDSzWkyDQLEMrbhdcNQDuK4o0iLORARGJ+IbOxcJZ7fpKIUS1H0DeM29eGgFG0aPEL205nll8nWC3YunyDeQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\API_REST_GREat\\API_REST_GREat_Domain\\API_REST_GREat_Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

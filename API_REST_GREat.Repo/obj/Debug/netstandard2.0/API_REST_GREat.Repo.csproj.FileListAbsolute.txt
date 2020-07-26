@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\bin\Debug\netstandard2.0\API_REST_GREat.Repo.deps.json
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\bin\Debug\netstandard2.0\API_REST_GREat.Repo.dll
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\bin\Debug\netstandard2.0\API_REST_GREat.Repo.pdb
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\bin\Debug\netstandard2.0\API_REST_GREat_Domain.dll
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\bin\Debug\netstandard2.0\API_REST_GREat_Domain.pdb
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.csprojAssemblyReference.cache
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.AssemblyInfo.cs
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.csproj.CopyComplete
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.dll
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat.Repo\obj\Debug\netstandard2.0\API_REST_GREat.Repo.pdb

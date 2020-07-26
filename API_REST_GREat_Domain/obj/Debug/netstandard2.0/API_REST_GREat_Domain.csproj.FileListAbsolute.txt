@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\bin\Debug\netstandard2.0\API_REST_GREat_Domain.deps.json
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\bin\Debug\netstandard2.0\API_REST_GREat_Domain.dll
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\bin\Debug\netstandard2.0\API_REST_GREat_Domain.pdb
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\obj\Debug\netstandard2.0\API_REST_GREat_Domain.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\obj\Debug\netstandard2.0\API_REST_GREat_Domain.AssemblyInfo.cs
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\obj\Debug\netstandard2.0\API_REST_GREat_Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\obj\Debug\netstandard2.0\API_REST_GREat_Domain.dll
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat_Domain\obj\Debug\netstandard2.0\API_REST_GREat_Domain.pdb
