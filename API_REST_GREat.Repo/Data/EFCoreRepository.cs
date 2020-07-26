@@ -37,10 +37,7 @@ namespace API_REST_GREat.Data
             _context.Remove(entity);
         }
 
-        public bool SaveChanges()
-        {
-            return (_context.SaveChanges())> 0;
-        }
+        
 
         public Usuario[] GetallUsers()
         {
@@ -66,6 +63,11 @@ namespace API_REST_GREat.Data
             IQueryable<Usuario> query = _context.Usuarios;
             query.AsNoTracking().OrderBy(h => h.Id);
             return query.AsNoTracking().FirstOrDefault(h => h.Id == id);
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            return (await _context.SaveChangesAsync()) > 0;
         }
     }
 }

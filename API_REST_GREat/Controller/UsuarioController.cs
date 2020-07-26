@@ -27,19 +27,35 @@ namespace API_REST_GREat.Controller
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_repo.GetallUsers());
+            try
+            {
+                return Ok(_repo.GetallUsers());
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET api/<UsuarioController>/5
         [EnableCors("Policy")]
         [HttpGet("byDoc")]
-        public IActionResult GetById(string doc)
+        public IActionResult GetByDoc(string doc)
         {
-            var user = _repo.GetUserByDoc(doc);
+            try
+            {
+                var user = _repo.GetUserByDoc(doc);
 
-            if(user != null)
-                return Ok(user);
-            return BadRequest("Usuario ao encontrado");
+                if (user != null)
+                    return Ok(user);
+                return BadRequest("Usuario ao encontrado");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET api/<UsuarioController>/5
@@ -50,43 +66,71 @@ namespace API_REST_GREat.Controller
             
             return Ok();
         }
+
         // POST api/<UsuarioController>
         [EnableCors("Policy")]
         [HttpPost]
-        public IActionResult Post([FromBody] Usuario user)
+        public async Task<IActionResult> Post([FromBody] Usuario user)
         {
-            _repo.Add(user);
+            try
+            {
+                _repo.Add(user);
 
-            if (_repo.SaveChanges())
-                return Ok(user);
-            return BadRequest("Nao cadastrou");
+                if (await _repo.SaveChangesAsync())
+                    return Ok(user);
+                return BadRequest("Nao cadastrou");
+
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT api/<UsuarioController>/5
         [EnableCors("Policy")]
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Usuario user)
+        public async Task<IActionResult> Put(int id, [FromBody] Usuario user)
         {
-            user.Id = id;
-            var usuario = _repo.GetUserById(id);
-            usuario = user;
-            _repo.Update(usuario);
+            try
+            {
+                user.Id = id;
+                var usuario = _repo.GetUserById(id);
+                usuario = user;
+                _repo.Update(usuario);
 
-            if (_repo.SaveChanges())
-                return Ok(user);
-            return BadRequest("Usuario nao encontrado");
+                if (await _repo.SaveChangesAsync())
+                    return Ok(user);
+                return BadRequest("Usuario nao encontrado");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         // DELETE api/<UsuarioController>/5
         [EnableCors("Policy")]
         [HttpDelete("{doc}")]
-        public IActionResult Delete(string doc)
+        public async Task<IActionResult> Delete(string doc)
         {
-            var user = _repo.GetUserByDoc(doc);
-            _repo.Remove(user);
-            if(_repo.SaveChanges())
-                return Ok("Deletado com Sucesso");
-            return BadRequest("Usuario nao encontrado");
+            try
+            {
+                var user = _repo.GetUserByDoc(doc);
+                _repo.Remove(user);
+                if (await _repo.SaveChangesAsync())
+                    return Ok("Deletado com Sucesso");
+                return BadRequest("Usuario nao encontrado");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
 }

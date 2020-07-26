@@ -8,7 +8,6 @@ namespace API_REST_GREat.Data
 {
     public interface IEFCoreRepository
     {
-        string Implementado();
         void Add<T>(T entity) where T : class;
         void Update<T>(T entity) where T : class;
         void Remove<T>(T entity) where T : class;
@@ -16,8 +15,6 @@ namespace API_REST_GREat.Data
         Usuario GetUserByDoc(string doc);
         Usuario[] GetUserByName(string name);
         Usuario GetUserById(int id);
-        bool SaveChanges();
-
-
+        Task<bool> SaveChangesAsync();
     }
 }
