@@ -31,6 +31,7 @@ namespace API_REST_GREat
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
 
+            services.AddScoped<IEFCoreRepository, EFCoreRepository>();
             services.AddControllers();
         }
 

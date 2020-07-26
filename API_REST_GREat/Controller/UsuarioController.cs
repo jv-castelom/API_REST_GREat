@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API_REST_GREat.Data;
 using API_REST_GREat.Model;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,12 @@ namespace API_REST_GREat.Controller
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+        private readonly IEFCoreRepository _repo;
+
+        public UsuarioController(IEFCoreRepository repo)
+        {
+            _repo = repo;
+        }
 
         List<Usuario> Usuarios = new List<Usuario>()
         {
@@ -40,7 +47,7 @@ namespace API_REST_GREat.Controller
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(Usuarios);
+            return Ok(_repo.Implementado());
         }
 
         // GET api/<UsuarioController>/5
@@ -64,14 +71,20 @@ namespace API_REST_GREat.Controller
         }
         // POST api/<UsuarioController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Usuario user)
         {
+            _repo.Add(user);
+
+            if (_repo.SaveChanges())
+                return Ok(user);
+            return BadRequest("Nao cadastrou");
         }
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Usuario user)
         {
+            
         }
 
         // DELETE api/<UsuarioController>/5
