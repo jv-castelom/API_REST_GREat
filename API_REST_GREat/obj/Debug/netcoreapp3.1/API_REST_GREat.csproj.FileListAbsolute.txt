@@ -37,9 +37,9 @@ C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\obj\Debug\netcoreapp3.1\API_REST_GREat.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\obj\Debug\netcoreapp3.1\API_REST_GREat.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\API_REST_GREat.Repo.dll
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\API_REST_GREat_Domain.dll
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\API_REST_GREat.Repo.pdb
 C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\bin\Debug\netcoreapp3.1\API_REST_GREat_Domain.pdb
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\obj\Debug\netcoreapp3.1\API_REST_GREat.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\API_REST_GREat\API_REST_GREat\obj\Debug\netcoreapp3.1\API_REST_GREat.MvcApplicationPartsAssemblyInfo.cache

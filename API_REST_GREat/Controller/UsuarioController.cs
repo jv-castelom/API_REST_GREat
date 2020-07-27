@@ -48,7 +48,7 @@ namespace API_REST_GREat.Controller
                return Ok(_repo.GetUserByDoc(doc));
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return BadRequest("Usuario ao encontrado");
@@ -87,8 +87,10 @@ namespace API_REST_GREat.Controller
         // POST api/<UsuarioController>
         [EnableCors("Policy")]
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Usuario user)
+        public async Task<IActionResult> Post([FromBody] UsuarioDTO user)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
                 _repo.Add(user);
@@ -111,7 +113,7 @@ namespace API_REST_GREat.Controller
         // PUT api/<UsuarioController>/5
         [EnableCors("Policy")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Usuario user)
+        public async Task<IActionResult> Put(int id, [FromBody] UsuarioDTO user)
         {
             try
             {

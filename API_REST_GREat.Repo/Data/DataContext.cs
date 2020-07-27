@@ -15,6 +15,6 @@ namespace API_REST_GREat.Data
         {
 
         }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<UsuarioDTO> Usuarios { get; set; }
     }
 }

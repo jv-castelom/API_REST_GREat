@@ -1340,6 +1340,9 @@
         }
       },
       "API_REST_GREat_Domain/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
         "runtime": {
           "API_REST_GREat_Domain.dll": {}
         }

@@ -39,30 +39,30 @@ namespace API_REST_GREat.Data
 
         
 
-        public Usuario[] GetallUsers()
+        public UsuarioDTO[] GetallUsers()
         {
-            IQueryable<Usuario> query = _context.Usuarios;
+            IQueryable<UsuarioDTO> query = _context.Usuarios;
             query.AsNoTracking().OrderBy(h => h.Id);
             return query.ToArray();
         }
 
-        public Usuario[] GetUserByDoc(string doc)
+        public UsuarioDTO[] GetUserByDoc(string doc)
         {
-            IQueryable<Usuario> query = _context.Usuarios;
+            IQueryable<UsuarioDTO> query = _context.Usuarios;
             query = query.AsNoTracking().Where(h => h.CPF.Equals(doc)||h.RG.Equals(doc)||h.Nome.Contains(doc));
             return query.ToArray();
         }
 
-        public Usuario[] GetUserByName(string name)
+        public UsuarioDTO[] GetUserByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario GetUserById(int id)
+        public UsuarioDTO GetUserById(int id)
         {
-            IQueryable<Usuario> query = _context.Usuarios;
+            IQueryable<UsuarioDTO> query = _context.Usuarios;
             query.AsNoTracking().OrderBy(h => h.Id);
-            Usuario u = query.AsNoTracking().FirstOrDefault(h => h.Id == id);
+            UsuarioDTO u = query.AsNoTracking().FirstOrDefault(h => h.Id == id);
             return u;
         }
 
