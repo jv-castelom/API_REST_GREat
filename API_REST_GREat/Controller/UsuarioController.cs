@@ -115,6 +115,8 @@ namespace API_REST_GREat.Controller
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] UsuarioDTO user)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
                 user.Id = id;

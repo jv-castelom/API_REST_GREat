@@ -49,7 +49,8 @@ namespace API_REST_GREat.Data
         public UsuarioDTO[] GetUserByDoc(string doc)
         {
             IQueryable<UsuarioDTO> query = _context.Usuarios;
-            query = query.AsNoTracking().Where(h => h.CPF.Equals(doc)||h.RG.Equals(doc)||h.Nome.Contains(doc));
+            query = query.AsNoTracking().Where(h => h.CPF.Equals(doc)||h.RG.Equals(doc) || h.Nome.Contains(doc));
+            //query = (IQueryable<UsuarioDTO>)query.AsNoTracking().FirstOrDefault(h => h.CPF.Equals(doc) || h.RG.Equals(doc));
             return query.ToArray();
         }
 

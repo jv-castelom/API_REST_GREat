@@ -18,7 +18,7 @@ namespace API_REST_GREat.Repo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("API_REST_GREat.Model.Usuario", b =>
+            modelBuilder.Entity("API_REST_GREat.Model.UsuarioDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,13 +35,17 @@ namespace API_REST_GREat.Repo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Filiacao_Mae")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Filiacao_Pai")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("RG")
                         .HasColumnType("nvarchar(max)");

@@ -12,10 +12,10 @@ namespace API_REST_GREat.Repo.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(maxLength: 50, nullable: false),
                     CPF = table.Column<string>(nullable: true),
                     RG = table.Column<string>(nullable: true),
-                    Filiacao_Mae = table.Column<string>(nullable: true),
+                    Filiacao_Mae = table.Column<string>(maxLength: 50, nullable: false),
                     Filiacao_Pai = table.Column<string>(nullable: true),
                     DataNasc = table.Column<string>(nullable: true),
                     DataCadastro = table.Column<string>(nullable: true)
