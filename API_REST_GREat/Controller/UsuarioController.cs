@@ -38,14 +38,31 @@ namespace API_REST_GREat.Controller
             }
         }
 
-        // GET api/<UsuarioController>/5
+        // GET api/<UsuarioController>/doc
         [EnableCors("Policy")]
-        [HttpGet("byDoc")]
+        [HttpGet("filtro/{doc}")]
         public IActionResult GetByDoc(string doc)
         {
             try
             {
-                var user = _repo.GetUserByDoc(doc);
+               return Ok(_repo.GetUserByDoc(doc));
+                
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest("Usuario ao encontrado");
+            }
+        }
+
+        // GET api/<UsuarioController>/5
+        [EnableCors("Policy")]
+        [HttpGet("{id:int}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var user = _repo.GetUserById(id);
 
                 if (user != null)
                     return Ok(user);
@@ -59,13 +76,13 @@ namespace API_REST_GREat.Controller
         }
 
         // GET api/<UsuarioController>/5
-        [EnableCors("Policy")]
-        [HttpGet("{nome}")]
-        public IActionResult GetByNome(string nome)
-        {
-            
-            return Ok();
-        }
+        //[EnableCors("Policy")]
+        //[HttpGet("{nome}")]
+        //public IActionResult GetByNome(string nome)
+        //{
+
+        //    return Ok();
+        //}
 
         // POST api/<UsuarioController>
         [EnableCors("Policy")]
@@ -75,9 +92,12 @@ namespace API_REST_GREat.Controller
             try
             {
                 _repo.Add(user);
-
                 if (await _repo.SaveChangesAsync())
-                    return Ok(user);
+                {
+                    var resp_user = _repo.GetUserByDoc(user.CPF);
+                    return Ok(resp_user);
+                }
+                    
                 return BadRequest("Nao cadastrou");
 
             }
@@ -115,11 +135,11 @@ namespace API_REST_GREat.Controller
         // DELETE api/<UsuarioController>/5
         [EnableCors("Policy")]
         [HttpDelete("{doc}")]
-        public async Task<IActionResult> Delete(string doc)
+        public async Task<IActionResult> Delete(int doc)
         {
             try
             {
-                var user = _repo.GetUserByDoc(doc);
+                var user = _repo.GetUserById(doc);
                 _repo.Remove(user);
                 if (await _repo.SaveChangesAsync())
                     return Ok("Deletado com Sucesso");

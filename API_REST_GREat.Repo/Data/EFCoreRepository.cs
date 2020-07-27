@@ -46,11 +46,11 @@ namespace API_REST_GREat.Data
             return query.ToArray();
         }
 
-        public Usuario GetUserByDoc(string doc)
+        public Usuario[] GetUserByDoc(string doc)
         {
             IQueryable<Usuario> query = _context.Usuarios;
-            query.AsNoTracking().OrderBy(h => h.Id);
-            return query.FirstOrDefault(h => h.CPF == doc || h.RG == doc);
+            query = query.AsNoTracking().Where(h => h.CPF.Equals(doc)||h.RG.Equals(doc)||h.Nome.Contains(doc));
+            return query.ToArray();
         }
 
         public Usuario[] GetUserByName(string name)
@@ -62,7 +62,8 @@ namespace API_REST_GREat.Data
         {
             IQueryable<Usuario> query = _context.Usuarios;
             query.AsNoTracking().OrderBy(h => h.Id);
-            return query.AsNoTracking().FirstOrDefault(h => h.Id == id);
+            Usuario u = query.AsNoTracking().FirstOrDefault(h => h.Id == id);
+            return u;
         }
 
         public async Task<bool> SaveChangesAsync()

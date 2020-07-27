@@ -13,8 +13,8 @@ namespace API_REST_GREat.Model
         public string RG { get; set; }
         public string Filiacao_Mae { get; set; }
         public string Filiacao_Pai { get; set; }
-        public DateTime Data_Nasc { get; set; }
-        public DateTime Data_Cadastro { get; set; }
+        public string DataNasc { get; set; }
+        public string DataCadastro { get; set; }
 
 
 

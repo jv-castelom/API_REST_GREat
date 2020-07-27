@@ -12,7 +12,7 @@ namespace API_REST_GREat.Data
         void Update<T>(T entity) where T : class;
         void Remove<T>(T entity) where T : class;
         Usuario[] GetallUsers();
-        Usuario GetUserByDoc(string doc);
+        Usuario[] GetUserByDoc(string doc);
         Usuario[] GetUserByName(string name);
         Usuario GetUserById(int id);
         Task<bool> SaveChangesAsync();

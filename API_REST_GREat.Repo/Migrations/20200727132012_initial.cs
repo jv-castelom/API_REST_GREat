@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API_REST_GREat.Repo.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,8 +17,8 @@ namespace API_REST_GREat.Repo.Migrations
                     RG = table.Column<string>(nullable: true),
                     Filiacao_Mae = table.Column<string>(nullable: true),
                     Filiacao_Pai = table.Column<string>(nullable: true),
-                    Data_Nasc = table.Column<DateTime>(nullable: false),
-                    Data_Cadastro = table.Column<DateTime>(nullable: false)
+                    DataNasc = table.Column<string>(nullable: true),
+                    DataCadastro = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
